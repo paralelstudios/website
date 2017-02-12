@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="eng">
     <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width">
+
 	<title>Paralel</title>
 	<!-- responsive grid sheets -->
 	<link rel="stylesheet" href="css/html5reset.css"/>
@@ -16,26 +18,10 @@
 	<div id="wrapper">
 	    <div id="content">
 	<!-- first row -->
-	    <div class="section group">
-		<!-- logo block start -->
-		<div class="col span_1_of_3">
-		    <div id="about">
-		<img id="logo" src="resources/paralel-logo.png">
-		<div style="display:none" id="logo-text">
-		<ul class="personnel">
-		    <li ><span class="whiteonblack">&nbsp &nbspDavid Olivera</span></li>
-		    <li>&nbsp &nbspSteven Morales</li>
-		    <li ><span class="whiteonblack">&nbsp &nbspAlfredo Llop</span></li>
-		    <li>&nbsp &nbspAmerico Delgado</li>
-		    <li ><span class="whiteonblack">&nbsp &nbspLeonardo Ruiz</span></li>
-		    <li>&nbsp &nbspDavid Rodriguez</li>
-		    <li><span class="whiteonblack">&nbsp &nbspMichael Perez<span></li>
-		</ul>
-		<div class="tagline"> WE ARE A COLLECTIVE OF DESIGNERS </div>
-		</div>
-		</div>
-	    </div>
-	    <!-- logo block end -->
+		<div class="section group">
+		    <div class="col span_1_of_3">
+			<img id="logo" src="resources/paralel-logo.png">
+			</div>
 	    <!-- project gallery start -->
 	    <!-- each img tag from here has a src attribute set to the image of that project -->
 	    <!-- if there is an alt image to be shown when the mouse enters the image, put that path in a "data-alt-src" attribute -->
@@ -64,9 +50,23 @@
 	    <div class="col span_1_of_3">
 		<img class="swap" src="resources/dona.png">
 	    </div>
-	    <div class="col span_1_of_3">
-		<img class="swap" src="resources/dona.png">
+	    		<!-- logo block start -->
+		<div class="col span_1_of_3">
+		<div id="about">
+		<ul class="personnel">
+		    <li ><span class="whiteonblack">&nbsp &nbspDavid Olivera&nbsp &nbsp</span></li>
+		    <li>Steven Morales</li>
+		    <li ><span class="whiteonblack">&nbsp &nbspAlfredo Llop&nbsp &nbsp</span></li>
+		    <li>Américo Delgado</li>
+		    <li ><span class="whiteonblack">&nbsp &nbspLeonardo Ruiz&nbsp &nbsp</span></li>
+		    <li>David Rodriguez</li>
+		    <li><span class="whiteonblack">&nbsp &nbspMichael Pérez&nbsp &nbsp<span></li>
+		</ul>
+		<div class="tagline"> WE ARE A COLLECTIVE OF DESIGNERS </div>
+		</div>
+		</div>
 	    </div>
+	    <!-- logo block end -->
 	</div>
 	<footer class="contact">
 	    <a href="tel:3052032122">+1 (305) 203-2122</a> &nbsp
@@ -76,7 +76,8 @@
 	</footer>
 	</div>
 	</div>
-	<!-- our scripts -->
+	 </script>
+	 <!-- our scripts -->
 	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>

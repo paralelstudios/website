@@ -1,0 +1,16 @@
+{
+  "name": "prototype-grid",
+  "version": "1.0.0",
+  "description": "grid-based portfolio website prototype",
+  "main": "js/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paralelstudios/website.git"
+  },
+  "author": "Michael Perez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paralelstudios/website/issues"
+  },
+  "homepage": "https://github.com/paralelstudios/website#readme"
+}

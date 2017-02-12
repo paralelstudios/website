@@ -1,4 +1,4 @@
-#wrapper {
+body {
     background: #fff url(../resources/sg_grid_sub.png) center top repeat;
 }
 
@@ -36,14 +36,15 @@ footer a {
 
 #about {
     font-family: courier;
+    margin-bottom: 15%;
 }
 
 #about .personnel {
-    margin-bottom: 2%;
-    font-size: 125%;
-    margin-top: 2%;
-    line-height: 110%;
+    margin-bottom: 5%;
+    line-height: 1.1;
     letter-spacing: 0.1em;
+    list-style: none;
+    text-align: center;
 }
 
 .whiteonblack {
@@ -51,12 +52,8 @@ footer a {
     background-color: black;
 }
 #about .tagline {
-     padding-top: 0.5%;
-    padding-bottom: 0.5%;
     font-size: 200%;
     text-align: center;
-    position: relative;
-    bottom: 0;
-    right: 0;
-    margin-top: 3.1em;
+    margin-top: 10%;
+    margin-bottom: 25%;
 }
