@@ -1,5 +1,8 @@
 body {
     background: #fff url(../resources/sg_grid_sub.png) center top repeat;
+    font-family: courier, san-serif;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
 img {
@@ -9,7 +12,6 @@ img {
 
 footer {
     text-align: center;
-    font-family: courier, san-serif;
     bottom: 0px;
     height: 30;
     right: 0%;
@@ -35,7 +37,7 @@ footer a {
 }
 
 #about {
-    font-family: courier;
+    margin-top: 15%;
     margin-bottom: 15%;
 }
 
@@ -56,4 +58,53 @@ footer a {
     text-align: center;
     margin-top: 10%;
     margin-bottom: 25%;
+}
+
+.span_1_of_3 {
+    position: relative;
+}
+.desc {
+    position: absolute;
+    bottom: -2em;
+    left: 0.5em;
+    width: 100%;
+    display: none;
+}
+
+.desc > h2 {
+    font-size: 1.1em;
+    margin-bottom: 2%;
+}
+
+
+.top-left {
+    bottom: inherit;
+    top: 0em;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    top: 75%;
+}
+.yum {
+    bottom: 2em;
+    left: 1em;
+    font-size: 2vw;
+}
+@media (max-width: 400px) {
+    .desc {
+        bottom: -0.5em;
+    }
+    .center {
+        top: 82%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .desc {
+        bottom: -2.5em;
+    }
 }
