@@ -37,7 +37,6 @@ footer a {
 }
 
 #about {
-    margin-top: 15%;
     margin-bottom: 15%;
 }
 
@@ -62,6 +61,7 @@ footer a {
 
 .span_1_of_3 {
     position: relative;
+    margin-bottom: 5%;
 }
 .desc {
     position: absolute;
@@ -73,14 +73,11 @@ footer a {
 
 .desc > h2 {
     font-size: 1.1em;
-    margin-bottom: 2%;
+    margin-top: 2%;
+
 }
 
 
-.top-left {
-    bottom: inherit;
-    top: 0em;
-}
 
 .right {
     text-align: right;
@@ -89,22 +86,70 @@ footer a {
 .center {
     top: 75%;
 }
-.yum {
-    bottom: 2em;
-    left: 1em;
-    font-size: 2vw;
+.top {
+    top: 0em;
+    bottom: initial;
 }
+
+
 @media (max-width: 400px) {
     .desc {
-        bottom: -0.5em;
+        font-size: 85%;
+
     }
     .center {
         top: 82%;
     }
 }
 
-@media (max-width: 1000px) {
+
+@media (min-width: 450px) and (max-width: 1000px) {
+    #about .personnel{
+        font-size: 80%;
+    }
+    #about .tagline {
+        font-size: 130%;
+    }
+
     .desc {
+        font-size: 65%;
         bottom: -2.5em;
     }
+
+    @media (orientation: landscape) {
+	#about .personnel {
+	    font-size: 60%;
+	}
+	.desc {
+	    font-size: 60%;
+	    bottom: -3.5em;
+	}
+	.center {
+	    top: 90%;
+	}
+	.middle .desc {
+	    bottom: -2em;	 	    
+	}
+	.middle .top {
+	    top: 0em;
+	    bottom: initial;
+	}
+
+    }
+}
+@media (min-width: 1000px) {
+    @media (orientation: landscape) {
+	.upper .desc{
+	    bottom: -4em;
+	}
+	.center {
+	    top: 80%;
+    }
+}
+
+@media (min-width: 1500px) {
+    .desc {
+        font-size: 170%;
+    }
+
 }

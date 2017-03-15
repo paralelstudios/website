@@ -40,8 +40,4 @@ var projectsWithAlts = Array.prototype.filter.call(
 
 // mouseover events from projects change the image to it's alt
 addListenerToHTMLCollection(projectsWithAlts, enterAction, both(swapImage, toggleText));
-
-if (enterAction !== exitAction) {
-    // mouseexit events from projects change the alt image back to the original
-    addListenerToHTMLCollection(projectsWithAlts, exitAction, both(swapImage, toggleText));
-}
+addListenerToHTMLCollection(projectsWithAlts, exitAction, both(swapImage, toggleText));
