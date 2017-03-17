@@ -9,35 +9,28 @@ function addListenerToHTMLCollection (els, event, func) {
     }
 }
 
-function swapEventTargetAttribute(attrA, attrB) {
-    return function (event) {
-	var a = event.target.getAttribute(attrA);
-	event.target.setAttribute(attrA, event.target.getAttribute(attrB));
-	event.target.setAttribute(attrB, a);
-    };
-}
 function toggleText(event) {
     var text = event.target.nextElementSibling;
-    var newStatus = (text.style.display === "none" || text.style.display === "") ? "inherit" : "none";
-    text.style.display = newStatus;
+    text.classList.toggle("hidden");
 }
 
-function isImageWithAlt (el) {
-    return el.nodeName === "IMG" && el.getAttribute("data-alt-src") !== null;
+function swapImage (event) {
+    event.target.children[0].classList.toggle("hidden");
+    event.target.children[1].classList.toggle("hidden");
 }
 
-var swapImage = swapEventTargetAttribute("src", "data-alt-src");
 function both (a, b) {
     return function (e) {
-        a(e);
-        b(e);
+	a(e);
+	b(e);
     };
 }
+
 // get all the project imageelements with alt images and attach the event listeners to them
-var projectsWithAlts = Array.prototype.filter.call(
-    document.getElementsByClassName("swap"),
-    isImageWithAlt);
+var projectsWithAlts = document.getElementsByClassName("swap");
 
 // mouseover events from projects change the image to it's alt
-addListenerToHTMLCollection(projectsWithAlts, enterAction, both(swapImage, toggleText));
-addListenerToHTMLCollection(projectsWithAlts, exitAction, both(swapImage, toggleText));
+addListenerToHTMLCollection(
+    projectsWithAlts, enterAction, both(swapImage, toggleText));
+addListenerToHTMLCollection(
+    projectsWithAlts, exitAction, both(swapImage, toggleText));

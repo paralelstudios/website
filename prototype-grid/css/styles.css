@@ -68,7 +68,6 @@ footer a {
     bottom: -2em;
     left: 0.5em;
     width: 100%;
-    display: none;
 }
 
 .desc > h2 {
@@ -77,8 +76,6 @@ footer a {
 
 }
 
-
-
 .right {
     text-align: right;
 }
@@ -86,11 +83,15 @@ footer a {
 .center {
     top: 75%;
 }
+
 .top {
     top: 0em;
     bottom: initial;
 }
 
+.hidden {
+    display: none
+}
 
 @media (max-width: 400px) {
     .desc {
@@ -128,7 +129,7 @@ footer a {
 	    top: 90%;
 	}
 	.middle .desc {
-	    bottom: -2em;	 	    
+	    bottom: -2em;
 	}
 	.middle .top {
 	    top: 0em;
