@@ -1,6 +1,6 @@
-var isTouchDevice = 'ontouchstart' in document.documentElement,
-    enterAction = isTouchDevice ? "click" : "mouseenter",
-    exitAction = isTouchDevice ? "click" : "mouseleave";
+var isTouchDevice = "ontouchstart" in document.documentElement,
+    enterAction = isTouchDevice ? "touchend" : "mouseenter",
+    exitAction = isTouchDevice ? null : "mouseleave";
 
 function addListenerToHTMLCollection (els, event, func) {
     // adds event listeners for "event" on "els" with the handler "func"
@@ -9,14 +9,29 @@ function addListenerToHTMLCollection (els, event, func) {
     }
 }
 
-function toggleText(event) {
-    var text = event.target.nextElementSibling;
-    text.classList.toggle("hidden");
+
+function getSwapElement (event) {
+    // touch event's target the img, not the swap
+    return event instanceof TouchEvent ? event.target.parentElement : event.target;
 }
 
+function toggleHidden (el) {
+    el.classList.toggle("hidden");
+}
+
+function toggleText(event) {
+    var description = getSwapElement(event).nextElementSibling;
+    toggleHidden(description);
+}
+
+
 function swapImage (event) {
-    event.target.children[0].classList.toggle("hidden");
-    event.target.children[1].classList.toggle("hidden");
+    var swapElement = getSwapElement(event),
+	image = swapElement.children[0],
+	altImage = swapElement.children[1];
+    toggleHidden(image);
+    toggleHidden(altImage);
+
 }
 
 function both (a, b) {
@@ -32,5 +47,8 @@ var projectsWithAlts = document.getElementsByClassName("swap");
 // mouseover events from projects change the image to it's alt
 addListenerToHTMLCollection(
     projectsWithAlts, enterAction, both(swapImage, toggleText));
-addListenerToHTMLCollection(
-    projectsWithAlts, exitAction, both(swapImage, toggleText));
+
+if (!isTouchDevice) {
+    addListenerToHTMLCollection(
+	projectsWithAlts, exitAction, both(swapImage, toggleText));
+}

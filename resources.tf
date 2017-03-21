@@ -43,76 +43,12 @@ resource "aws_route53_zone" "paralel" {
   name = "${var.domain}"
 }
 
-resource "aws_route53_record" "paralel" {
-  zone_id = "${aws_route53_zone.paralel.zone_id}"
-  ttl     = "14400"
-  name    = "${var.domain}"
-  type    = "A"
-  records = ["${var.dns_server_ip}"]
-}
-
 resource "aws_route53_record" "localhost" {
   zone_id = "${aws_route53_zone.paralel.zone_id}"
   ttl     = "14400"
   name    = "localhost"
   type    = "A"
   records = ["127.0.0.1"]
-}
-
-resource "aws_route53_record" "autoconfig" {
-  zone_id = "${aws_route53_zone.paralel.zone_id}"
-  ttl     = "14400"
-  name    = "autoconfig"
-  type    = "A"
-  records = ["${var.dns_server_ip}"]
-}
-
-resource "aws_route53_record" "autodiscover" {
-  zone_id = "${aws_route53_zone.paralel.zone_id}"
-  ttl     = "14400"
-  name    = "autodiscover"
-  type    = "A"
-  records = ["${var.dns_server_ip}"]
-}
-
-resource "aws_route53_record" "cpanel" {
-  zone_id = "${aws_route53_zone.paralel.zone_id}"
-  ttl     = "14400"
-  name    = "cpanel"
-  type    = "A"
-  records = ["${var.dns_server_ip}"]
-}
-
-resource "aws_route53_record" "webdisk" {
-  zone_id = "${aws_route53_zone.paralel.zone_id}"
-  ttl     = "14400"
-  name    = "webdisk"
-  type    = "A"
-  records = ["${var.dns_server_ip}"]
-}
-
-resource "aws_route53_record" "cpcalendars" {
-  zone_id = "${aws_route53_zone.paralel.zone_id}"
-  ttl     = "14400"
-  name    = "cpcalendars"
-  type    = "A"
-  records = ["${var.dns_server_ip}"]
-}
-
-resource "aws_route53_record" "cpcontacts" {
-  zone_id = "${aws_route53_zone.paralel.zone_id}"
-  ttl     = "14400"
-  name    = "cpcontacts"
-  type    = "A"
-  records = ["${var.dns_server_ip}"]
-}
-
-resource "aws_route53_record" "whm" {
-  zone_id = "${aws_route53_zone.paralel.zone_id}"
-  ttl     = "14400"
-  name    = "whm"
-  type    = "A"
-  records = ["${var.dns_server_ip}"]
 }
 
 resource "aws_route53_record" "webmail" {
